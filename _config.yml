@@ -1,0 +1,16 @@
+title: "Wilson BARIKI"
+description: "Cybersecurity Student — CTF, Blue Team, Web Security & Cloud"
+url: "https://n0xbr3ak3r.github.io"
+baseurl: ""
+lang: "fr"
+markdown: kramdown
+permalink: /blog/:title/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+plugins: []
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
