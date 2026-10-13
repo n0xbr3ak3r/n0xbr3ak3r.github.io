@@ -1,5 +1,5 @@
 title: "Wilson BARIKI"
-description: "Cybersecurity Student — CTF, Blue Team, Web Security & Cloud"
+description: "Portfolio de Wilson BARIKI — cybersécurité, projets, veille et write-ups CTF."
 url: "https://n0xbr3ak3r.github.io"
 baseurl: ""
 lang: "fr"
@@ -7,10 +7,10 @@ markdown: kramdown
 permalink: /blog/:title/
 collections:
   projects:
-    output: true
-    permalink: /projects/:name/
+    output: false
 plugins: []
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - documentation.txt

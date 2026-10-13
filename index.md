@@ -1,31 +1,11 @@
 ---
 layout: default
-title: Home
+title: Accueil
+lang: fr
+alt_url: /en/
 ---
-
-<section class="hero reveal">
-  <p class="eyebrow">CYBERSECURITY STUDENT · LOMÉ, TOGO</p>
-  <h1>Wilson<br><em>BARIKI.</em></h1>
-  <p class="hero-copy">I learn by building, breaking and documenting things in cybersecurity.</p>
-  <div class="hero-actions"><a class="button primary" href="{{ '/about/' | relative_url }}">About me <span>↗</span></a><a class="button" href="{{ '/blog/' | relative_url }}">Read the blog</a></div>
-</section>
-
-<section class="statement reveal">
-  <p>Currently exploring</p>
-  <div class="topics"><span>Web Security</span><span>Blue Team</span><span>Cloud Security</span><span>CTF</span></div>
-</section>
-
-<section class="section reveal">
-  <div class="section-head"><div><p class="eyebrow">SELECTED WRITING</p><h2>Recent notes.</h2></div><a href="{{ '/blog/' | relative_url }}">View all ↗</a></div>
-  <div class="post-list">
-    <article class="post-card"><div class="post-meta"><span>CTF</span><time>31.08.2026</time></div><h3>What I learned from my first serious CTF</h3><p>Notes, mistakes and the small techniques that actually made a difference.</p><a href="{{ '/blog/first-ctf/' | relative_url }}">Read article <span>↗</span></a></article>
-    <article class="post-card"><div class="post-meta"><span>BLUE TEAM</span><time>—</time></div><h3>Building a Wazuh lab from scratch</h3><p>Documenting the architecture, installation and lessons from my first SOC lab.</p><a href="{{ '/blog/wazuh-lab/' | relative_url }}">Read article <span>↗</span></a></article>
-  </div>
-</section>
-
-<section class="section split reveal">
-  <div><p class="eyebrow">SELECTED WORK</p><h2>Things I've<br><em>built.</em></h2></div>
-  <div class="project-mini"><div><span>01</span><strong>AI Guardian</strong><p>Phishing detection & awareness platform.</p></div><a href="{{ '/projects/' | relative_url }}">Explore ↗</a></div>
-</section>
-
-<section class="closing reveal"><p class="eyebrow">LET'S CONNECT</p><h2>Curious about what I'm<br><em>working on next?</em></h2><a class="button primary" href="mailto:hello@example.com">Get in touch ↗</a></section>
+<section class="hero reveal"><div class="hero-text"><p class="eyebrow">ÉTUDIANT EN CYBERSÉCURITÉ · LOMÉ, TOGO</p><h1>Wilson<br><em>BARIKI.</em></h1><p class="hero-copy">J’apprends en construisant, en testant et en documentant des projets de cybersécurité.</p><div class="hero-actions"><a class="button primary" href="/about/">À propos de moi <span>↗</span></a><a class="button" href="/blog/">Lire le blog</a></div></div><div class="portrait-wrap"><div class="portrait-placeholder">Ajoutez votre photo ici<br>assets/images/wilson.jpeg</div><img src="/assets/images/wilson.jpeg" alt="Portrait de Wilson BARIKI" onerror="this.style.display='none';this.previousElementSibling.style.display='grid'"></div></section>
+<section class="statement reveal"><p>Mes domaines d’exploration</p><div class="topics"><span>Sécurité Web</span><span>Blue Team</span><span>Sécurité Cloud</span><span>CTF</span><span>Détection</span></div></section>
+<section class="section reveal"><div class="section-head"><div><p class="eyebrow">ÉCRITURE RÉCENTE</p><h2>Notes & articles.</h2></div><a href="/blog/">Tous les articles ↗</a></div><div class="post-list">{% assign french_posts = site.posts | where: 'lang', 'fr' | sort: 'date' | reverse %}{% for post in french_posts limit:3 %}<article class="post-card"><div class="post-meta"><span>{{ post.category | default: 'Article' }}</span><time>{{ post.date | date: '%d.%m.%Y' }}</time></div><h3>{{ post.title }}</h3><p>{{ post.description }}</p><a href="{{ post.url | relative_url }}">Lire l’article ↗</a></article>{% endfor %}{% if french_posts.size == 0 %}<p class="empty-state">Les prochains articles seront publiés ici.</p>{% endif %}</div></section>
+<section class="section split reveal"><div><p class="eyebrow">PROJET À LA UNE</p><h2>Ce que je<br><em>construis.</em></h2></div><div class="project-mini"><div><span>01 / IA & SÉCURITÉ</span><strong>AI Guardian</strong><p>Analyse de l’hameçonnage et sensibilisation à la cybersécurité.</p></div><a href="/projects/">Explorer ↗</a></div></section>
+<section class="closing"><p class="eyebrow">ÉCHANGEONS</p><h2>Curieux de voir ce que<br><em>je prépare ?</em></h2><a class="button primary" href="https://github.com/n0xbr3ak3r">Me retrouver sur GitHub ↗</a></section>

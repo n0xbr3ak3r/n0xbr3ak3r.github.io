@@ -1,0 +1,45 @@
+- key: ai-guardian
+  kind: built
+  title_fr: AI Guardian
+  title_en: AI Guardian
+  category_fr: IA appliquée à la sécurité
+  category_en: AI applied to security
+  description_fr: Plateforme de sensibilisation et d’analyse des tentatives d’hameçonnage. Le projet explore la classification de messages suspects, l’explication des signaux de risque et la présentation de conseils concrets pour aider chacun à réagir plus sûrement.
+  description_en: A cybersecurity awareness and phishing analysis platform. The project explores suspicious message classification, explains risk signals, and presents practical guidance to help people respond safely.
+  stack: IA · sécurité Web · sensibilisation
+- key: active-directory
+  kind: lab
+  title_fr: Active Directory
+  title_en: Active Directory
+  category_fr: Identité · laboratoire Windows
+  category_en: Identity · Windows lab
+  description_fr: Laboratoire de domaine Windows pour pratiquer la création d’une forêt, la gestion des utilisateurs et groupes, les unités d’organisation, les stratégies de groupe et l’administration centralisée. À compléter avec le schéma réseau, les politiques appliquées et les captures de votre propre déploiement.
+  description_en: A Windows domain lab for practicing forest setup, users and groups, organizational units, Group Policy, and centralized administration. Add your network diagram, applied policies, and screenshots from your deployment.
+  stack: Windows Server · DNS · GPO
+- key: ca-server
+  kind: lab
+  title_fr: Serveur d’autorité de certification
+  title_en: Certificate Authority Server
+  category_fr: PKI · certificats
+  category_en: PKI · certificates
+  description_fr: Mise en place d’une infrastructure à clés publiques avec une autorité de certification, des modèles de certificats et l’émission de certificats pour les services du laboratoire. Documentez la chaîne de confiance, le renouvellement et la révocation des certificats.
+  description_en: A public key infrastructure lab with a certificate authority, certificate templates, and certificate issuance for lab services. Document the trust chain, renewal, and revocation process.
+  stack: Windows Server · AD CS · PKI
+- key: pfsense
+  kind: lab
+  title_fr: pfSense
+  title_en: pfSense
+  category_fr: Réseau · pare-feu
+  category_en: Networking · firewall
+  description_fr: Pare-feu de laboratoire pour segmenter les réseaux, contrôler les flux inter-VLAN et centraliser des règles d’accès. Ajoutez les interfaces, règles, services réseau et tests de connectivité réellement configurés.
+  description_en: A lab firewall for segmenting networks, controlling inter-VLAN traffic, and centralizing access rules. Add the interfaces, rules, network services, and connectivity tests you configured.
+  stack: pfSense · VLAN · pare-feu
+- key: wazuh
+  kind: lab
+  title_fr: Wazuh — supervision sécurité
+  title_en: Wazuh — security monitoring
+  category_fr: Blue Team · SIEM / XDR
+  category_en: Blue Team · SIEM / XDR
+  description_fr: Laboratoire de supervision centralisée avec collecte de journaux, agents de postes, règles de détection et tableaux de bord. Présentez les sources de logs, les alertes validées et la méthode suivie pour investiguer un événement.
+  description_en: A centralized monitoring lab with log collection, endpoint agents, detection rules, and dashboards. Describe your log sources, validated alerts, and the steps used to investigate an event.
+  stack: Wazuh · Syslog · détection

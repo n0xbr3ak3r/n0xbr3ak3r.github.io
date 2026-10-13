@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<article>
+<header class="article-head"><p class="eyebrow">{{ page.category | default: page.categories | join: ' · ' }}{% if page.date %} · {{ page.date | date: '%d.%m.%Y' }}{% endif %}</p><h1>{{ page.title }}</h1>{% if page.description %}<p>{{ page.description }}</p>{% endif %}</header>
+{% if page.image %}<figure class="article-cover"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">{% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}</figure>{% endif %}
+<div class="prose article-body">{{ content }}<p class="back-link"><a href="{% if page.lang == 'en' %}/en/blog/{% else %}/blog/{% endif %}">← {% if page.lang == 'en' %}Back to writing{% else %}Retour au blog{% endif %}</a></p></div>
+</article>

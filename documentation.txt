@@ -1,0 +1,142 @@
+PORTFOLIO DE WILSON BARIKI — GUIDE DU PROJET
+============================================================
+
+APERÇU
+------
+Portfolio bilingue français / anglais conçu pour GitHub Pages avec Jekyll.
+L’identité visuelle existante a été conservée : fond crème, typographie sobre,
+accents discrets, thème sombre et mise en page responsive.
+
+PAGES ET FONCTIONNALITÉS
+------------------------
+Accueil (/) : présentation, photo de profil à droite, domaines d’intérêt,
+articles récents, projet mis en avant et contact.
+
+À propos (/about/ et /en/about/) : présentation et domaines d’exploration.
+
+Projets (/projects/ et /en/projects/) : AI Guardian seul dans la section
+« Things I have built », puis quatre fiches détaillées de laboratoires :
+Active Directory, serveur d’autorité de certification, pfSense et Wazuh.
+Les fiches sont centralisées dans _data/projects.yml et peuvent être étendues.
+
+Blog (/blog/ et /en/blog/) : cartes avec image, titre, catégorie, date et résumé.
+Chaque carte ouvre un article détaillé. Les articles sont des fichiers Markdown
+dans _posts/. Un article d’exemple existe en français et en anglais.
+
+Write-ups (/writeups/ et /en/writeups/) : liste regroupable par catégorie,
+challenge, plateforme, résumé et lien externe vers Notion. La page affiche les
+catégories suggérées tant que la liste est vide. Les entrées vont dans
+_data/writeups.yml.
+
+CV (/cv/ et /en/cv/) : deux téléchargements, français et anglais.
+
+Le sélecteur FR / EN mène aux pages de la langue correspondante. Le bouton ◐
+permet de basculer entre le thème clair et le thème sombre. Le site s’adapte aux
+écrans mobiles et respecte le réglage de réduction des animations du navigateur.
+
+FICHIERS À AJOUTER
+------------------
+Photo d’accueil :
+  assets/images/wilson.jpeg
+
+CV en français :
+  assets/cv/wilson_bariki_cv.pdf
+
+CV en anglais :
+  assets/cv/wilson_bariki_cv_en.pdf
+
+Ces trois fichiers personnels ne sont pas inclus dans l’archive. Une image
+illustrative locale est déjà utilisée comme visuel de l’article d’exemple.
+
+AJOUTER UN PROJET
+-----------------
+Ouvrez _data/projects.yml et copiez une fiche existante. Champs utiles :
+  key            identifiant court unique
+  kind           « built » pour Things I have built, « lab » pour les labs
+  title_fr/en    titre dans chaque langue
+  category_fr/en catégorie affichée
+  description_fr/en description affichée
+  stack          technologies ou sujets
+
+Pour conserver AI Guardian seul dans la première section, ne créez pas d’autre
+entrée avec kind: built. Les fiches Active Directory, CA Server, pfSense et
+Wazuh sont actuellement des descriptions de laboratoire de départ : ajoutez
+vos propres captures, architecture et résultats vérifiés avant de les présenter
+comme des déploiements réalisés.
+
+AJOUTER UN ARTICLE DE BLOG AVEC DES IMAGES
+------------------------------------------
+1. Créez un fichier dans _posts/ selon la convention
+   AAAA-MM-JJ-nom-court.md, par exemple _posts/2026-10-20-analyse-web.md.
+2. Ajoutez au début un bloc YAML entre deux lignes de trois tirets :
+
+   ---
+   layout: post
+   title: "Titre de l’article"
+   date: 2026-10-20 12:00:00 +0000
+   lang: fr
+   category: Web Security
+   description: "Résumé visible sur la carte du blog."
+   image: /assets/images/articles/nom-image.png
+   image_alt: "Description de l’image"
+   permalink: /blog/nom-article/
+   alt_url: /en/blog/nom-article-en/
+   ---
+
+3. Écrivez le corps en Markdown après le front matter. Utilisez des titres,
+   listes, liens et images Markdown comme dans l’exemple ci-dessous.
+4. Copiez les images dans assets/images/ ou un sous-dossier dédié. Gardez des
+   noms simples et utilisez un texte alternatif descriptif.
+5. Créez une version anglaise distincte avec lang: en, une URL dans /en/blog/
+   et des alt_url réciproques pour le sélecteur de langue.
+
+Exemple d’image dans le corps de l’article :
+  ![Description utile](/assets/images/articles/capture-etape-1.png)
+
+AJOUTER UN WRITE-UP CTF LIÉ À NOTION
+------------------------------------
+Ajoutez une entrée YAML à _data/writeups.yml :
+
+  - category_fr: Web exploitation
+    category_en: Web exploitation
+    challenge: Nom du challenge
+    platform: Nom de la plateforme
+    summary: Bref résumé en français
+    summary_en: Short English summary
+    url: https://www.notion.so/votre-lien-de-partage
+
+Utilisez un lien Notion public ou accessible aux visiteurs visés. Chaque carte
+ouvre la page externe dans un nouvel onglet. N’insérez pas d’identifiants ni de
+contenu confidentiel dans ce fichier.
+
+FAVICON ET STYLES
+-----------------
+La favicon SVG est dans assets/images/favicon.svg. Les styles sont dans
+assets/css/main.css et le basculement de thème dans assets/js/main.js.
+Le portrait et les images des articles sont rangés sous assets/images/.
+
+PRÉVISUALISER ET PUBLIER LES CHANGEMENTS
+----------------------------------------
+Le projet se construit avec Jekyll / GitHub Pages. La machine de Wilson a
+présenté un problème OpenSSL dans Ruby ; dans ce cas, la prévisualisation
+locale Bundler peut échouer avant même de lire les fichiers du site. On peut
+utiliser le déploiement de vérification GitHub Pages ou réparer Ruby/Bundler
+avant d’exécuter localement le serveur Jekyll.
+
+Après avoir placé cette version dans le dépôt GitHub Pages, relisez les pages
+et vérifiez les PDF, la photo, les liens Notion et les images. Puis, depuis le
+dossier local du dépôt, exécutez les commandes suivantes :
+
+  git add .
+  git commit -m "Mettre à jour le portfolio"
+  git push
+
+GitHub Pages reconstruit ensuite le site si la publication Pages est activée.
+Cette livraison locale n’a rien envoyé sur le dépôt ni publié sur le site live.
+
+NOTES SUR LA VALIDATION DE CETTE ARCHIVE
+----------------------------------------
+La structure des pages, les routes, les ressources locales et les liens vers
+les fichiers personnels ont été contrôlés. Une compilation Jekyll complète n’a
+pas été possible dans l’environnement actuel, donc la génération distante par
+GitHub Pages reste à vérifier après installation dans le dépôt.
